@@ -1,0 +1,52 @@
+constraints:
+  max_drawdown: 0.12
+  max_position_size: 0.8
+  min_sharpe: 0.8
+  min_trades: 20
+optimization:
+  composite_weights:
+    calmar_ratio: 0.3
+    sharpe_ratio: 0.3
+    stability: 0.2
+    total_return: 0.2
+  objective: composite_score
+  secondary_objectives:
+  - sharpe_ratio
+  - calmar_ratio
+  - stability
+parameters:
+  allocation_method:
+    optimal_hint: performance_based
+    type: list
+    values:
+    - equal_weight
+    - risk_parity
+    - performance_based
+    - ml_optimized
+  lookback_period:
+    max: 180
+    min: 30
+    optimal_hint: 90
+    step: 30
+    type: range
+  rebalance_frequency:
+    optimal_hint: weekly
+    type: list
+    values:
+    - daily
+    - weekly
+    - monthly
+  strategies:
+    base_strategies:
+    - BollingerBands
+    - VolumeProfile
+    - RSI
+    - MACD
+    max_strategies: 4
+    min_strategies: 2
+    type: combination
+strategy:
+  class: AdaptiveMultiStrategy
+  description: Adaptive combination of multiple strategies
+  name: AdaptiveMultiStrategy
+  type: ensemble

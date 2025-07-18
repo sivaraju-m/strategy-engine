@@ -1,0 +1,4 @@
+[console_scripts]
+backtest = strategy_engine.bin.backtest_runner:main
+generate-signals = strategy_engine.bin.signal_generator:main
+optimize-strategy = strategy_engine.bin.strategy_optimizer:main

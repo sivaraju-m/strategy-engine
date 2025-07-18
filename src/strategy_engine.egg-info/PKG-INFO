@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: strategy-engine
+Version: 0.1.0
+Summary: Engine for defining, backtesting, and executing trading strategies
+Home-page: https://github.com/yourusername/strategy-engine
+Author: Your Name
+Author-email: your.email@example.com
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: numpy>=1.22.0
+Requires-Dist: scikit-learn>=1.0.0
+Requires-Dist: pandas-ta>=0.3.14b0
+Requires-Dist: shared-services>=0.1.0
+Requires-Dist: trading-data-pipeline>=0.1.0
+Requires-Dist: matplotlib>=3.5.0
+Requires-Dist: pyyaml>=6.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Strategy Engine
+
+A modular engine for defining, backtesting, and executing trading strategies.
+
+## Features
+
+- Multiple strategy implementations
+- Comprehensive backtesting framework
+- Signal generation and validation
+- ML model integration
+- Strategy parameter optimization
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/strategy-engine.git
+cd strategy-engine
+
+# Install the package
+pip install -e .
+```
+
+## Usage
+
+```bash
+# Run backtesting
+backtest --config config/strategies/bollinger_bands.yaml --universe nifty50
+
+# Generate trading signals
+generate-signals --config config/signal_config.yaml --universe nifty50
+
+# Optimize strategy parameters
+optimize-strategy --config config/strategies/adaptive_multi.yaml --metric sharpe_ratio
+```
+
+See documentation for more details.

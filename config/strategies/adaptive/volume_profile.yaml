@@ -1,0 +1,38 @@
+constraints:
+  max_drawdown: 0.2
+  max_position_size: 0.4
+  min_sharpe: 0.3
+  min_trades: 5
+optimization:
+  objective: profit_factor
+  secondary_objectives:
+  - total_return
+  - consistency
+  weight_consistency: 0.15
+  weight_profit_factor: 0.6
+  weight_return: 0.25
+parameters:
+  lookback_period:
+    max: 100
+    min: 20
+    optimal_hint: 50
+    step: 10
+    type: range
+  value_area_percentage:
+    optimal_hint: 0.7
+    type: list
+    values:
+    - 0.6
+    - 0.7
+    - 0.8
+  volume_threshold:
+    max: 3.0
+    min: 1.2
+    optimal_hint: 1.5
+    step: 0.2
+    type: range
+strategy:
+  class: VolumeProfileStrategy
+  description: Volume Profile with POC and Value Area
+  name: VolumeProfileStrategy
+  type: volume_analysis
