@@ -2,6 +2,17 @@
 """
 Enhanced Trading Strategies
 Advanced technical analysis and signal generation
+
+This module implements enhanced trading strategies with improved accuracy,
+multi-timeframe analysis, and adaptive thresholds.
+It includes strategies like Enhanced RSI, Enhanced Momentum, and MACD with
+features such as:
+- Adaptive thresholds based on historical data distribution
+- Multi-timeframe analysis for better trend confirmation
+- Improved signal generation logic with confidence scoring
+- Support for multiple indicators and trend confirmation
+- Unified signal generation interface for easy integration with trading systems 
+
 """
 
 import logging

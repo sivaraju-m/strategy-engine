@@ -1,0 +1,60 @@
+# Momentum Strategy Configuration
+strategy:
+  name: "momentum"
+  type: "technical"
+  description: "Momentum-based trading strategy using price and volume indicators"
+  
+  # Strategy parameters
+  parameters:
+    lookback_period: 20
+    momentum_threshold: 0.02
+    volume_threshold: 1.5
+    rsi_upper: 70
+    rsi_lower: 30
+    ma_short: 10
+    ma_long: 20
+    
+  # Risk management
+  risk:
+    max_position_size: 0.1  # 10% of portfolio
+    stop_loss: 0.05         # 5% stop loss
+    take_profit: 0.15       # 15% take profit
+    max_drawdown: 0.2       # 20% max drawdown
+    
+  # Trading rules
+  entry_rules:
+    - "price_change > momentum_threshold"
+    - "volume_ratio > volume_threshold"
+    - "rsi < rsi_upper"
+    - "ma_short > ma_long"
+    
+  exit_rules:
+    - "price_change < -momentum_threshold"
+    - "rsi > rsi_upper"
+    - "ma_short < ma_long"
+    
+  # Universe filters
+  universe:
+    market_cap_min: 1000000000  # $1B minimum market cap
+    volume_min: 1000000         # $1M minimum daily volume
+    price_min: 5.0             # $5 minimum price
+    sectors:
+      - "Technology"
+      - "Healthcare"
+      - "Financial Services"
+      - "Consumer Cyclical"
+      
+  # Backtesting settings
+  backtest:
+    start_date: "2020-01-01"
+    end_date: "2024-12-31"
+    initial_capital: 1000000
+    commission: 0.001
+    slippage: 0.001
+    
+  # Signal generation
+  signals:
+    frequency: "daily"
+    rebalance_frequency: "weekly"
+    signal_decay_days: 5
+    confidence_threshold: 0.6

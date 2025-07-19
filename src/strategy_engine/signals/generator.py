@@ -5,6 +5,9 @@ Signal Generator for Strategy Engine
 This module handles signal generation for various trading strategies.
 It provides a unified interface for generating trading signals across
 different strategies and time frames.
+
+It supports real-time signal generation, backtesting, and optimization for improved trading performance.
+
 """
 
 import asyncio

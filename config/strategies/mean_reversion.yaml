@@ -1,0 +1,74 @@
+# Mean Reversion Strategy Configuration
+strategy:
+  name: "mean_reversion"
+  type: "statistical"
+  description: "Mean reversion strategy based on statistical indicators and price deviations"
+  
+  # Strategy parameters
+  parameters:
+    lookback_period: 30
+    zscore_threshold: 2.0
+    bollinger_period: 20
+    bollinger_std: 2.0
+    rsi_oversold: 30
+    rsi_overbought: 70
+    volume_ma_period: 10
+    
+  # Risk management
+  risk:
+    max_position_size: 0.08  # 8% of portfolio
+    stop_loss: 0.04          # 4% stop loss
+    take_profit: 0.08        # 8% take profit
+    max_drawdown: 0.15       # 15% max drawdown
+    max_holding_period: 30   # Maximum 30 days holding
+    
+  # Trading rules
+  entry_rules:
+    - "zscore < -zscore_threshold"  # Price below mean
+    - "price < bollinger_lower"     # Below lower Bollinger band
+    - "rsi < rsi_oversold"          # Oversold condition
+    - "volume > volume_ma"          # Above average volume
+    
+  exit_rules:
+    - "zscore > 0"                  # Price back to mean
+    - "price > bollinger_upper"     # Above upper Bollinger band
+    - "rsi > rsi_overbought"        # Overbought condition
+    - "holding_days > max_holding_period"
+    
+  # Universe filters
+  universe:
+    market_cap_min: 500000000   # $500M minimum market cap
+    volume_min: 500000          # $500K minimum daily volume
+    price_min: 10.0            # $10 minimum price
+    price_max: 1000.0          # $1000 maximum price
+    volatility_min: 0.15       # 15% minimum annualized volatility
+    volatility_max: 0.60       # 60% maximum annualized volatility
+    sectors:
+      - "Technology"
+      - "Healthcare"
+      - "Consumer Defensive"
+      - "Industrials"
+      - "Financial Services"
+      
+  # Backtesting settings
+  backtest:
+    start_date: "2020-01-01"
+    end_date: "2024-12-31"
+    initial_capital: 1000000
+    commission: 0.001
+    slippage: 0.001
+    benchmark: "SPY"
+    
+  # Signal generation
+  signals:
+    frequency: "daily"
+    rebalance_frequency: "daily"
+    signal_decay_days: 3
+    confidence_threshold: 0.7
+    
+  # Statistical parameters
+  statistics:
+    rolling_window: 252        # 1 year rolling window
+    min_observations: 60       # Minimum observations for calculations
+    confidence_level: 0.95     # 95% confidence level
+    outlier_threshold: 3.0     # 3 standard deviations for outliers

@@ -4,6 +4,10 @@ Strategy Coordinator for Strategy Engine
 
 This module coordinates strategy execution across multiple strategies and symbols.
 It manages strategy lifecycle, execution scheduling, and resource allocation.
+
+It provides a unified interface for registering, executing, and monitoring strategies,
+including error handling, recovery, and performance tracking.
+
 """
 
 import asyncio

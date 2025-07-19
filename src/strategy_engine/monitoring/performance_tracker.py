@@ -4,6 +4,13 @@ Performance Tracker for Strategy Engine
 
 This module tracks strategy performance metrics, execution statistics,
 and provides analytics for strategy optimization.
+
+It provides a unified interface for recording, analyzing, and reporting
+performance metrics across different strategies and trading symbols.
+It supports real-time performance tracking, daily summaries, and historical
+data archiving for comprehensive performance analysis.
+It also includes utilities for resetting daily metrics, archiving data,
+and calculating derived metrics such as success rates and average execution times.  
 """
 
 import json

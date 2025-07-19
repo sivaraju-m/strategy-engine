@@ -6,7 +6,7 @@ annotated-types==0.7.0
 anyio==4.9.0
 appnope==0.1.4
 APScheduler==3.11.0
-archspec @ file:///home/conda/feedstock_root/build_artifacts/archspec_1737352602016/work
+archspec==0.2.4
 argon2-cffi==25.1.0
 argon2-cffi-bindings==21.2.0
 arrow==1.3.0
@@ -68,7 +68,6 @@ google-auth-oauthlib==1.2.2
 google-cloud-bigquery==3.34.0
 google-cloud-core==2.4.3
 google-cloud-firestore==2.21.0
-google-cloud-pubsub==2.31.0
 google-cloud-secret-manager==2.24.0
 google-cloud-storage==3.1.1
 google-crc32c==1.7.1
@@ -136,9 +135,6 @@ nodeenv==1.9.1
 notebook_shim==0.2.4
 numpy==2.3.1
 oauthlib==3.3.1
-opentelemetry-api==1.35.0
-opentelemetry-sdk==1.35.0
-opentelemetry-semantic-conventions==0.56b0
 overrides==7.7.0
 packaging @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_packaging_1745345660/work
 paho-mqtt==2.1.0
@@ -195,7 +191,6 @@ requests-oauthlib==2.0.0
 retrying==1.4.0
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
--e git+https://github.com/sivaraju-m/risk-compliance.git@0f41a30204078f00b003b7aba80f8fed9a07e98d#egg=risk_compliance
 rpds-py==0.25.1
 rsa==4.9.1
 ruamel.yaml @ file:///Users/runner/miniforge3/conda-bld/ruamel.yaml_1736248058782/work
@@ -213,10 +208,9 @@ six==1.17.0
 smmap==5.0.2
 sniffio==1.3.1
 soupsieve==2.7
-SQLAlchemy==2.0.41
 stack-data==0.6.3
 starlette==0.46.2
--e git+https://github.com/sivaraju-m/strategy-engine.git@ddaf765bfbb712f3446be217aab58b457c048d78#egg=strategy_engine
+-e git+https://github.com/sivaraju-m/strategy-engine.git@a3826246b8ee5bd5ea6d3a6aaa26a47e634b4864#egg=strategy_engine
 streamlit==1.46.1
 structlog==25.4.0
 supervisor==4.2.5
