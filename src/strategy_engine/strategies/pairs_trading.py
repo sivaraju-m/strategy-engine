@@ -1,6 +1,16 @@
 """
+================================================================================
 Pairs Trading Strategy Implementation
-Statistical arbitrage between correlated stocks
+================================================================================
+
+This module implements a statistical arbitrage strategy for trading pairs of
+correlated stocks. It features:
+
+- Trades based on deviations of price ratios from their mean
+- Real-time signal generation and backtesting
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import pandas as pd

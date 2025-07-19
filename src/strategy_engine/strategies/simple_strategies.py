@@ -1,4 +1,19 @@
 """
+================================================================================
+Simple Trading Strategies Implementation
+================================================================================
+
+This module provides simple and robust trading strategies for live trading. It
+features:
+
+- Includes SMA, RSI, and Momentum strategies
+- Reliable and easy to use
+- Real-time signal generation and backtesting
+
+================================================================================
+"""
+
+"""
 Simple Trading Strategies for Live Trading
 =========================================
 

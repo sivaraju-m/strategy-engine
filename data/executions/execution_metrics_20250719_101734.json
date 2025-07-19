@@ -1,0 +1,782 @@
+[
+  {
+    "timestamp": "2025-07-19T10:02:28.925390",
+    "strategy": "rsi",
+    "symbol": "RELIANCE",
+    "execution_time": 0.10062,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.026815",
+    "strategy": "rsi",
+    "symbol": "TCS",
+    "execution_time": 0.101197,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.128480",
+    "strategy": "rsi",
+    "symbol": "HDFCBANK",
+    "execution_time": 0.101184,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.230122",
+    "strategy": "rsi",
+    "symbol": "INFY",
+    "execution_time": 0.101223,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.331744",
+    "strategy": "rsi",
+    "symbol": "HINDUNILVR",
+    "execution_time": 0.101171,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.433015",
+    "strategy": "rsi",
+    "symbol": "ICICIBANK",
+    "execution_time": 0.101129,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.534427",
+    "strategy": "rsi",
+    "symbol": "KOTAKBANK",
+    "execution_time": 0.101178,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.636175",
+    "strategy": "rsi",
+    "symbol": "BHARTIARTL",
+    "execution_time": 0.101222,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.737892",
+    "strategy": "rsi",
+    "symbol": "ITC",
+    "execution_time": 0.101222,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.838758",
+    "strategy": "rsi",
+    "symbol": "SBIN",
+    "execution_time": 0.100346,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:29.940626",
+    "strategy": "rsi",
+    "symbol": "BAJFINANCE",
+    "execution_time": 0.101273,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.042155",
+    "strategy": "rsi",
+    "symbol": "ASIANPAINT",
+    "execution_time": 0.100962,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.143901",
+    "strategy": "rsi",
+    "symbol": "MARUTI",
+    "execution_time": 0.101214,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.245606",
+    "strategy": "rsi",
+    "symbol": "HCLTECH",
+    "execution_time": 0.1012,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.347265",
+    "strategy": "rsi",
+    "symbol": "AXISBANK",
+    "execution_time": 0.101196,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.448880",
+    "strategy": "rsi",
+    "symbol": "LT",
+    "execution_time": 0.101196,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.549932",
+    "strategy": "rsi",
+    "symbol": "WIPRO",
+    "execution_time": 0.100552,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.650789",
+    "strategy": "rsi",
+    "symbol": "NESTLEIND",
+    "execution_time": 0.100348,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.753015",
+    "strategy": "rsi",
+    "symbol": "ULTRACEMCO",
+    "execution_time": 0.10117,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:02:30.854444",
+    "strategy": "rsi",
+    "symbol": "POWERGRID",
+    "execution_time": 0.10118,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:30.957995",
+    "strategy": "rsi",
+    "symbol": "RELIANCE",
+    "execution_time": 0.101241,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.059453",
+    "strategy": "rsi",
+    "symbol": "TCS",
+    "execution_time": 0.101223,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.160917",
+    "strategy": "rsi",
+    "symbol": "HDFCBANK",
+    "execution_time": 0.101228,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.262315",
+    "strategy": "rsi",
+    "symbol": "INFY",
+    "execution_time": 0.101177,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.363617",
+    "strategy": "rsi",
+    "symbol": "HINDUNILVR",
+    "execution_time": 0.101169,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.465106",
+    "strategy": "rsi",
+    "symbol": "ICICIBANK",
+    "execution_time": 0.101267,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.565683",
+    "strategy": "rsi",
+    "symbol": "KOTAKBANK",
+    "execution_time": 0.100337,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.667164",
+    "strategy": "rsi",
+    "symbol": "BHARTIARTL",
+    "execution_time": 0.101223,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.767887",
+    "strategy": "rsi",
+    "symbol": "ITC",
+    "execution_time": 0.100525,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.869073",
+    "strategy": "rsi",
+    "symbol": "SBIN",
+    "execution_time": 0.101081,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:31.970302",
+    "strategy": "rsi",
+    "symbol": "BAJFINANCE",
+    "execution_time": 0.101144,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.071579",
+    "strategy": "rsi",
+    "symbol": "ASIANPAINT",
+    "execution_time": 0.101165,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.173033",
+    "strategy": "rsi",
+    "symbol": "MARUTI",
+    "execution_time": 0.101243,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.274349",
+    "strategy": "rsi",
+    "symbol": "HCLTECH",
+    "execution_time": 0.10114,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.375713",
+    "strategy": "rsi",
+    "symbol": "AXISBANK",
+    "execution_time": 0.101232,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.477195",
+    "strategy": "rsi",
+    "symbol": "LT",
+    "execution_time": 0.101242,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.578630",
+    "strategy": "rsi",
+    "symbol": "WIPRO",
+    "execution_time": 0.101223,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.680043",
+    "strategy": "rsi",
+    "symbol": "NESTLEIND",
+    "execution_time": 0.101207,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.781356",
+    "strategy": "rsi",
+    "symbol": "ULTRACEMCO",
+    "execution_time": 0.101128,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:07:32.882685",
+    "strategy": "rsi",
+    "symbol": "POWERGRID",
+    "execution_time": 0.101201,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:32.988055",
+    "strategy": "rsi",
+    "symbol": "RELIANCE",
+    "execution_time": 0.100929,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.088750",
+    "strategy": "rsi",
+    "symbol": "TCS",
+    "execution_time": 0.100461,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.190190",
+    "strategy": "rsi",
+    "symbol": "HDFCBANK",
+    "execution_time": 0.101237,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.291658",
+    "strategy": "rsi",
+    "symbol": "INFY",
+    "execution_time": 0.101229,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.392379",
+    "strategy": "rsi",
+    "symbol": "HINDUNILVR",
+    "execution_time": 0.10049,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.493706",
+    "strategy": "rsi",
+    "symbol": "ICICIBANK",
+    "execution_time": 0.101095,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.595155",
+    "strategy": "rsi",
+    "symbol": "KOTAKBANK",
+    "execution_time": 0.101222,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.696458",
+    "strategy": "rsi",
+    "symbol": "BHARTIARTL",
+    "execution_time": 0.10104,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.797901",
+    "strategy": "rsi",
+    "symbol": "ITC",
+    "execution_time": 0.101226,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:33.899251",
+    "strategy": "rsi",
+    "symbol": "SBIN",
+    "execution_time": 0.101166,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.000502",
+    "strategy": "rsi",
+    "symbol": "BAJFINANCE",
+    "execution_time": 0.101143,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.101830",
+    "strategy": "rsi",
+    "symbol": "ASIANPAINT",
+    "execution_time": 0.10121,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.203352",
+    "strategy": "rsi",
+    "symbol": "MARUTI",
+    "execution_time": 0.10128,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.304954",
+    "strategy": "rsi",
+    "symbol": "HCLTECH",
+    "execution_time": 0.10124,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.406401",
+    "strategy": "rsi",
+    "symbol": "AXISBANK",
+    "execution_time": 0.10123,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.507881",
+    "strategy": "rsi",
+    "symbol": "LT",
+    "execution_time": 0.101257,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.609421",
+    "strategy": "rsi",
+    "symbol": "WIPRO",
+    "execution_time": 0.101304,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.710843",
+    "strategy": "rsi",
+    "symbol": "NESTLEIND",
+    "execution_time": 0.101215,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.811961",
+    "strategy": "rsi",
+    "symbol": "ULTRACEMCO",
+    "execution_time": 0.100896,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  },
+  {
+    "timestamp": "2025-07-19T10:12:34.913433",
+    "strategy": "rsi",
+    "symbol": "POWERGRID",
+    "execution_time": 0.101219,
+    "signals_generated": 1,
+    "success": true,
+    "performance_metrics": {
+      "signal_quality": 0.85,
+      "execution_speed": "fast",
+      "risk_score": 0.3
+    }
+  }
+]

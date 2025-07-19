@@ -1,6 +1,16 @@
 """
+================================================================================
 Options Strategy Implementation
-Implements covered calls and protective puts strategies
+================================================================================
+
+This module provides strategies for covered calls, protective puts, and
+cash-secured puts. It features:
+
+- Risk management using delta, theta, and implied volatility
+- Real-time signal generation and backtesting
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import logging

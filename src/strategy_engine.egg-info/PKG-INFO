@@ -12,7 +12,6 @@ Requires-Dist: numpy>=1.22.0
 Requires-Dist: scikit-learn>=1.0.0
 Requires-Dist: pandas-ta>=0.3.14b0
 Requires-Dist: shared-services>=0.1.0
-Requires-Dist: trading-data-pipeline>=0.1.0
 Requires-Dist: matplotlib>=3.5.0
 Requires-Dist: pyyaml>=6.0
 Dynamic: author

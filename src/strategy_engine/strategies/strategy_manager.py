@@ -1,5 +1,16 @@
 """
-Strategy Manager for coordinating multiple trading strategies
+================================================================================
+Strategy Manager Implementation
+================================================================================
+
+This module coordinates multiple trading strategies and combines their signals.
+It features:
+
+- Manages strategy weights and confidence thresholds
+- Combines signals for robust decision-making
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import pandas as pd

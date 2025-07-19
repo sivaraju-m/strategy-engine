@@ -1,6 +1,16 @@
 """
-Multi-timeframe Strategy Implementation
-Combines daily, hourly, and minute-level signals for comprehensive analysis
+================================================================================
+Multi-Timeframe Strategy Implementation
+================================================================================
+
+This module combines signals from daily, hourly, and minute-level analyses for
+robust decision-making. It features:
+
+- Trends and momentum across multiple time horizons
+- Configurable parameters for lookback periods and trend weights
+- Real-time signal generation and backtesting
+
+================================================================================
 """
 
 import logging

@@ -150,3 +150,17 @@ def configure_package_logging():
 
 # Auto-configure when module is imported
 configure_package_logging()
+
+
+def get_logger(name: str, level: Optional[str] = None) -> logging.Logger:
+    """
+    Get a logger instance with the given name.
+
+    Args:
+        name: Name of the logger
+        level: Optional log level override
+
+    Returns:
+        Configured logger instance
+    """
+    return setup_logger(name, level)

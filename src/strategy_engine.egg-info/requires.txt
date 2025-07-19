@@ -3,6 +3,5 @@ numpy>=1.22.0
 scikit-learn>=1.0.0
 pandas-ta>=0.3.14b0
 shared-services>=0.1.0
-trading-data-pipeline>=0.1.0
 matplotlib>=3.5.0
 pyyaml>=6.0

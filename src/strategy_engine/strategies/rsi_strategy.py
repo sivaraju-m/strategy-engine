@@ -1,12 +1,16 @@
 """
-# RSI Strategy with SEBI Compliance
-#
-# SJ-VERIFY
-# - Path: /ai-trading-machine/src/ai_trading_machine/strategies
-# - Type: strategy
-# - Checks: types,sebi,risk,logging
-#
-# Purpose: RSI-based mean reversion strategy with position sizing and SEBI compliance
+================================================================================
+RSI Strategy Implementation
+================================================================================
+
+This module implements a mean reversion strategy based on Relative Strength
+Index (RSI). It features:
+
+- Buy signals when RSI < oversold threshold
+- Sell signals when RSI > overbought threshold
+- SEBI compliance and risk management
+
+================================================================================
 """
 
 import logging

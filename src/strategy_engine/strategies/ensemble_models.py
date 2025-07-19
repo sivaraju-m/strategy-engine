@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 """
-🤖 Ensemble Models Implementation
-Advanced ML ensemble strategies for the AI Trading Machine
-Combines multiple models for superior signal generation
+================================================================================
+Ensemble Models Implementation
+================================================================================
+
+This module combines multiple machine learning models for superior signal
+generation. It features:
+
+- Base class for ensemble models
+- Models include SMA, RSI, Momentum, and Volume Weighted
+- Weighted ensemble strategy for combining signals
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import logging
@@ -626,7 +636,7 @@ class EnsembleStrategy:
             'win_rate': self._calculate_win_rate(trades),
             'profit_factor': self._calculate_profit_factor(trades),
             'calmar_ratio': total_return / abs(self._calculate_max_drawdown(pv_series)) if self._calculate_max_drawdown(pv_series) != 0 else 0
-        }
+        };
         
         backtest_results = {
             'performance_metrics': metrics,

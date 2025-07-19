@@ -1,12 +1,16 @@
 """
-# Portfolio Rebalancing with Transaction Cost Optimization
-#
-# SJ-VERIFY
-# - Path: /ai-trading-machine/src/ai_trading_machine/strategies
-# - Type: portfolio
-# - Checks: types,sebi,costs,optimization
-#
-# Purpose: Portfolio rebalancing logic with transaction cost optimization, minimize brokerage and impact costs
+================================================================================
+Portfolio Rebalancing Strategy Implementation
+================================================================================
+
+This module optimizes portfolio rebalancing with transaction cost minimization.
+It features:
+
+- Maintains target allocations while minimizing costs
+- SEBI compliance and risk management
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import logging

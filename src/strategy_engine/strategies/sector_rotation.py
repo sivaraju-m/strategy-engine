@@ -1,6 +1,16 @@
 """
+================================================================================
 Sector Rotation Strategy Implementation
-Based on macroeconomic indicators and sector performance analysis
+================================================================================
+
+This module rotates between sectors based on macroeconomic indicators and
+sector performance. It features:
+
+- Relative sector performance and momentum indicators
+- Real-time signal generation and backtesting
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import pandas as pd

@@ -1,12 +1,17 @@
 """
-# Base Strategy Class with SEBI Compliance
-#
-# SJ-VERIFY
-# - Path: /ai-trading-machine/src/ai_trading_machine/strategies
-# - Type: strategy
-# - Checks: types,sebi,risk,logging
-#
-# Purpose: Abstract base class for all trading strategies with SEBI compliance
+================================================================================
+Base Strategy Class with SEBI Compliance
+================================================================================
+
+This module provides an abstract base class for developing trading strategies
+with SEBI compliance. It features:
+
+- Unified interface for signal generation, risk management, and position sizing
+- SEBI compliance checks for Indian markets
+- Logging for traceability and debugging
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import logging

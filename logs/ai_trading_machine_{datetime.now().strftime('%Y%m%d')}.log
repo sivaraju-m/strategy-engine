@@ -1,0 +1,33 @@
+2025-07-19 10:02:28 - __main__ - INFO - 🚀 Initializing Daily Strategy Runner...
+2025-07-19 10:02:28 - strategy_engine.core.strategy_coordinator - INFO - 🔧 Initializing Strategy Coordinator...
+2025-07-19 10:02:28 - strategy_engine.core.strategy_coordinator - INFO - ✅ Strategy Coordinator initialized successfully
+2025-07-19 10:02:28 - strategy_engine.signals.generator - INFO - 🔧 Initializing Signal Generator...
+2025-07-19 10:02:28 - strategy_engine.signals.generator - INFO - ✅ Signal Generator initialized successfully
+2025-07-19 10:02:28 - strategy_engine.monitoring.performance_tracker - INFO - 🔧 Initializing Performance Tracker...
+2025-07-19 10:02:28 - strategy_engine.monitoring.performance_tracker - INFO - ✅ Performance Tracker initialized successfully
+2025-07-19 10:02:28 - strategy_engine.core.strategy_coordinator - INFO - ✅ Strategy registered: rsi
+2025-07-19 10:02:28 - __main__ - INFO - ✅ Registered strategy: rsi
+2025-07-19 10:02:28 - __main__ - INFO - ✅ Daily Strategy Runner initialized successfully
+2025-07-19 10:02:28 - __main__ - INFO - 🚀 Starting daily strategy execution for 0.17 hours...
+2025-07-19 10:02:28 - __main__ - INFO - 🔄 Starting strategy execution cycle #1
+2025-07-19 10:02:30 - __main__ - INFO - ✅ Cycle completed: 20 strategies, 20 signals, 2.03s
+2025-07-19 10:07:30 - __main__ - INFO - 🔄 Starting strategy execution cycle #2
+2025-07-19 10:07:32 - __main__ - INFO - ✅ Cycle completed: 20 strategies, 20 signals, 2.03s
+2025-07-19 10:12:32 - __main__ - INFO - 🔄 Starting strategy execution cycle #3
+2025-07-19 10:12:34 - __main__ - INFO - ✅ Cycle completed: 20 strategies, 20 signals, 2.03s
+2025-07-19 10:17:34 - __main__ - INFO - 🌆 Running end-of-day processing...
+2025-07-19 10:17:34 - __main__ - INFO - 📄 Daily report generated: reports/daily_strategy_report_2025-07-19.txt
+2025-07-19 10:17:34 - __main__ - ERROR - ❌ Failed to save session data: Object of type datetime is not JSON serializable
+2025-07-19 10:17:34 - strategy_engine.monitoring.performance_tracker - INFO - 📦 Daily data archived: data/performance/daily_metrics_20250719.json
+2025-07-19 10:17:34 - __main__ - INFO - 🧹 Daily cleanup completed
+2025-07-19 10:17:34 - __main__ - INFO - ✅ End-of-day processing completed
+2025-07-19 10:17:34 - __main__ - INFO - ⏹️ Daily strategy execution completed
+2025-07-19 10:17:34 - __main__ - INFO - 🛑 Shutting down Daily Strategy Runner...
+2025-07-19 10:17:34 - strategy_engine.core.strategy_coordinator - INFO - 🛑 Shutting down Strategy Coordinator...
+2025-07-19 10:17:34 - strategy_engine.core.strategy_coordinator - INFO - ✅ Strategy Coordinator shutdown completed
+2025-07-19 10:17:34 - strategy_engine.monitoring.performance_tracker - INFO - 🔚 Finalizing Performance Tracker...
+2025-07-19 10:17:34 - strategy_engine.monitoring.performance_tracker - INFO - 📦 Daily data archived: data/performance/daily_metrics_20250719.json
+2025-07-19 10:17:34 - strategy_engine.monitoring.performance_tracker - INFO - 💾 Execution metrics saved: data/executions/execution_metrics_20250719_101734.json
+2025-07-19 10:17:34 - strategy_engine.monitoring.performance_tracker - INFO - ✅ Performance Tracker finalized
+2025-07-19 10:17:34 - __main__ - ERROR - ❌ Failed to save session data: Object of type datetime is not JSON serializable
+2025-07-19 10:17:34 - __main__ - INFO - ✅ Shutdown completed

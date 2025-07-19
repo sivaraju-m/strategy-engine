@@ -1,3 +1,17 @@
+"""
+================================================================================
+Momentum Strategy Implementation
+================================================================================
+
+This module generates trading signals based on price momentum. It features:
+
+- Momentum indicators from historical price data
+- Real-time signal generation and backtesting
+- Designed for integration into larger trading systems
+
+================================================================================
+"""
+
 from typing import Union
 
 import pandas as pd

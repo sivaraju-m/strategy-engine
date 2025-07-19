@@ -13,6 +13,8 @@ src/strategy_engine/backtest/batch_backtest_runner.py
 src/strategy_engine/backtest/bulk_runner.py
 src/strategy_engine/backtest/engine.py
 src/strategy_engine/backtest/strategy_comparator.py
+src/strategy_engine/core/__init__.py
+src/strategy_engine/core/strategy_coordinator.py
 src/strategy_engine/ml/__init__.py
 src/strategy_engine/ml/predict.py
 src/strategy_engine/ml/train_model.py
@@ -22,7 +24,10 @@ src/strategy_engine/ml/vertex_ai_registry.py
 src/strategy_engine/ml/features/__init__.py
 src/strategy_engine/ml/features/technical_indicators.py
 src/strategy_engine/ml/model_registry/__init__.py
+src/strategy_engine/monitoring/__init__.py
+src/strategy_engine/monitoring/performance_tracker.py
 src/strategy_engine/signals/__init__.py
+src/strategy_engine/signals/generator.py
 src/strategy_engine/strategies/__init__.py
 src/strategy_engine/strategies/base_strategy.py
 src/strategy_engine/strategies/enhanced_strategies.py
@@ -47,3 +52,4 @@ src/strategy_engine/utils/enhanced_logging.py
 src/strategy_engine/utils/error_handling.py
 src/strategy_engine/utils/logger.py
 src/strategy_engine/utils/market_data_validator.py
+src/strategy_engine/utils/market_hours.py

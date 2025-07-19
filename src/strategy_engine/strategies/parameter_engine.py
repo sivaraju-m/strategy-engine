@@ -1,6 +1,22 @@
 """
-Trading Strategy Engine with Parameter Memory
-Implements auto-tuning, parameter optimization, and performance tracking
+================================================================================
+Strategy Parameter Engine
+================================================================================
+
+This module provides a unified interface for managing, optimizing, and tracking
+parameters for trading strategies. It features:
+
+- Parameter memory and auto-tuning
+- Grid search and optimization utilities
+- Performance tracking and analytics
+- Integration with Firestore and BigQuery for persistence
+- Real-time and batch parameter generation
+- Backtesting support and summary statistics
+
+Designed for integration into larger trading systems, it enables robust
+parameter management and continuous improvement of trading strategies.
+
+================================================================================
 """
 
 import itertools

@@ -1,6 +1,17 @@
 """
+================================================================================
 LSTM Price Prediction Strategy Implementation
-Neural network for price forecasting
+================================================================================
+
+This module uses neural networks for predicting financial market prices. It
+features:
+
+- Historical price data for training
+- Trading signals based on predicted price movements
+- Real-time signal generation and backtesting
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import pandas as pd

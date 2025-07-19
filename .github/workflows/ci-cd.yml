@@ -1,0 +1,284 @@
+name: Strategy Engine CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run daily strategy execution at 9:00 AM IST (3:30 AM UTC)
+    - cron: '30 3 * * 1-5'  # Monday to Friday
+  workflow_dispatch:
+    inputs:
+      execution_mode:
+        description: 'Execution mode'
+        required: true
+        default: 'quick'
+        type: choice
+        options:
+        - quick
+        - standard
+        - extended
+      strategies:
+        description: 'Comma-separated strategies (optional)'
+        required: false
+        type: string
+      duration:
+        description: 'Duration in hours (optional)'
+        required: false
+        type: string
+
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt
+        pip install -e .
+        
+    - name: Run linting
+      run: |
+        flake8 src/ tests/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 src/ tests/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        
+    - name: Run type checking
+      run: |
+        mypy src/strategy_engine --ignore-missing-imports
+        
+    - name: Run unit tests
+      run: |
+        pytest tests/unit/ -v --cov=src/strategy_engine --cov-report=xml
+        
+    - name: Run integration tests
+      run: |
+        pytest tests/integration/ -v
+        
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+        
+    - name: Build package
+      run: |
+        python -m build
+        
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist-files
+        path: dist/
+
+  daily_strategy_execution:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -e .
+        
+    - name: Setup authentication
+      run: |
+        # Setup any required authentication here
+        echo "Setting up trading system authentication..."
+        
+    - name: Run quick health check
+      run: |
+        python -c "
+        import sys
+        sys.path.append('src')
+        from strategy_engine.utils.market_hours import MarketHoursValidator
+        validator = MarketHoursValidator()
+        print(f'Market status: {validator.get_market_status()}')
+        print(f'Is market day: {validator.is_market_day()}')
+        "
+        
+    - name: Determine execution parameters
+      id: params
+      run: |
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          MODE="${{ github.event.inputs.execution_mode }}"
+          STRATEGIES="${{ github.event.inputs.strategies }}"
+          DURATION="${{ github.event.inputs.duration }}"
+        else
+          MODE="standard"
+          STRATEGIES=""
+          DURATION=""
+        fi
+        
+        echo "mode=$MODE" >> $GITHUB_OUTPUT
+        echo "strategies=$STRATEGIES" >> $GITHUB_OUTPUT
+        echo "duration=$DURATION" >> $GITHUB_OUTPUT
+        
+    - name: Run daily strategy execution
+      id: strategy_run
+      run: |
+        echo "🚀 Starting daily strategy execution..."
+        echo "Mode: ${{ steps.params.outputs.mode }}"
+        echo "Strategies: ${{ steps.params.outputs.strategies }}"
+        echo "Duration: ${{ steps.params.outputs.duration }}"
+        
+        # Build command arguments
+        ARGS=""
+        if [ "${{ steps.params.outputs.mode }}" = "quick" ]; then
+          ARGS="--quick"
+        elif [ "${{ steps.params.outputs.mode }}" = "extended" ]; then
+          ARGS="--extended"
+        fi
+        
+        if [ -n "${{ steps.params.outputs.strategies }}" ]; then
+          ARGS="$ARGS --strategies ${{ steps.params.outputs.strategies }}"
+        fi
+        
+        if [ -n "${{ steps.params.outputs.duration }}" ]; then
+          ARGS="$ARGS --duration ${{ steps.params.outputs.duration }}"
+        fi
+        
+        # Add configuration file
+        ARGS="$ARGS --config config/daily_runner/config.yaml"
+        
+        # Run the strategy execution
+        python bin/daily_strategy_runner.py $ARGS
+        
+    - name: Archive execution results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: strategy-execution-results-${{ github.run_number }}
+        path: |
+          reports/
+          data/
+          *.log
+        retention-days: 30
+        
+    - name: Generate execution summary
+      if: always()
+      run: |
+        echo "## 📊 Daily Strategy Execution Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Execution Date:** $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "**Mode:** ${{ steps.params.outputs.mode }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Status:** ${{ steps.strategy_run.outcome }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -f "reports/daily_strategy_report_$(date +%Y-%m-%d).txt" ]; then
+          echo "**Daily Report:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          cat "reports/daily_strategy_report_$(date +%Y-%m-%d).txt" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+    - name: Notify on failure
+      if: failure()
+      run: |
+        echo "❌ Daily strategy execution failed!"
+        echo "Check the logs and artifacts for details."
+        # Add notification logic here (Slack, email, etc.)
+
+  docker_build:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: true
+        tags: |
+          ghcr.io/${{ github.repository_owner }}/strategy-engine:latest
+          ghcr.io/${{ github.repository_owner }}/strategy-engine:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, docker_build]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: production
+    
+    steps:
+    - name: Deploy to production
+      run: |
+        echo "🚀 Deploying strategy engine to production..."
+        # Add deployment logic here
+        echo "✅ Deployment completed successfully!"

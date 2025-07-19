@@ -1,0 +1,116 @@
+# Daily Strategy Runner Configuration
+# ====================================
+
+daily_runner:
+  # Trading watchlist - top liquid stocks for strategy execution
+  watchlist:
+    - "RELIANCE"
+    - "TCS"
+    - "HDFCBANK"
+    - "INFY"
+    - "HINDUNILVR"
+    - "ICICIBANK"
+    - "KOTAKBANK"
+    - "BHARTIARTL"
+    - "ITC"
+    - "SBIN"
+    - "BAJFINANCE"
+    - "ASIANPAINT"
+    - "MARUTI"
+    - "HCLTECH"
+    - "AXISBANK"
+    - "LT"
+    - "WIPRO"
+    - "NESTLEIND"
+    - "ULTRACEMCO"
+    - "POWERGRID"
+  
+  # Active strategies for execution
+  strategies:
+    - "rsi"
+    - "momentum"
+    - "sma"
+    - "bollinger"
+    - "macd"
+  
+  # Execution interval in minutes
+  execution_interval_minutes: 5
+  
+  # Maximum concurrent strategy executions
+  max_concurrent_executions: 10
+  
+  # Performance tracking settings
+  performance_tracking:
+    enabled: true
+    save_detailed_metrics: true
+    archive_daily_data: true
+
+# Strategy-specific configurations
+strategies:
+  rsi:
+    period: 14
+    oversold: 30
+    overbought: 70
+    enabled: true
+    description: "RSI-based momentum strategy"
+  
+  momentum:
+    window: 20
+    threshold: 0.02
+    enabled: true
+    description: "Price momentum strategy"
+  
+  sma:
+    fast_period: 10
+    slow_period: 30
+    enabled: true
+    description: "Simple moving average crossover"
+  
+  bollinger:
+    period: 20
+    std_dev: 2.0
+    enabled: true
+    description: "Bollinger Bands strategy"
+  
+  macd:
+    fast: 12
+    slow: 26
+    signal: 9
+    enabled: true
+    description: "MACD signal strategy"
+
+# Market hours configuration
+market_hours:
+  start_time: "09:15"
+  end_time: "15:30"
+  timezone: "Asia/Kolkata"
+  pre_market_start: "08:45"
+  post_market_end: "16:30"
+
+# Logging configuration
+logging:
+  level: "INFO"
+  enable_file_logging: true
+  log_rotation: true
+  max_log_files: 30
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Risk management settings
+risk_management:
+  max_position_size: 0.05  # 5% of portfolio per position
+  max_daily_drawdown: 0.02  # 2% daily drawdown limit
+  stop_loss_percentage: 0.03  # 3% stop loss
+  take_profit_percentage: 0.06  # 6% take profit
+
+# Performance thresholds
+performance_thresholds:
+  min_success_rate: 0.60  # 60% minimum success rate
+  max_execution_time: 2.0  # 2 seconds max execution time
+  max_daily_errors: 50  # Maximum errors per day
+
+# Data management
+data_management:
+  cache_market_data: true
+  cache_expiry_minutes: 15
+  cleanup_old_data: true
+  keep_data_days: 30

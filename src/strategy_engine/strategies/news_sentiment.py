@@ -1,6 +1,16 @@
 """
+================================================================================
 News Sentiment Strategy Implementation
-Incorporate news sentiment analysis for trading decisions
+================================================================================
+
+This module analyzes news sentiment for generating trading signals. It
+features:
+
+- Sentiment analysis based on news headlines
+- Real-time signal generation and backtesting
+- Designed for integration into larger trading systems
+
+================================================================================
 """
 
 import pandas as pd

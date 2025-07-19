@@ -1,5 +1,20 @@
 # src/ai_trading_machine/strategies/strategy_registry.py
 
+"""
+================================================================================
+Strategy Registry Implementation
+================================================================================
+
+This module provides a unified interface for accessing and creating trading
+strategies. It features:
+
+- Maps strategy names to their implementations
+- Supports dynamic creation of strategy instances
+- Designed for integration into larger trading systems
+
+================================================================================
+"""
+
 from typing import Any
 
 try:
