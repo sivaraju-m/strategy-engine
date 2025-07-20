@@ -10,7 +10,7 @@ from strategy_engine.strategies.base_strategy import (
     StrategyMetadata,
     SignalType,
     TradingSignal,
-    SEBILimits
+    SEBILimits,
 )
 
 # For backwards compatibility and easier imports

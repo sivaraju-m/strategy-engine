@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+.coverage
+.pytest_cache/
+.vscode/
+.DS_Store

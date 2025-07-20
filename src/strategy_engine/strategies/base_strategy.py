@@ -36,20 +36,20 @@ logger = logging.getLogger(__name__)
 
 class StrategyType(Enum):
     """Types of trading strategies"""
-    
-    MOMENTUM = auto()     # Strategies based on price momentum
+
+    MOMENTUM = auto()  # Strategies based on price momentum
     MEAN_REVERSION = auto()  # Strategies that trade mean reversion
     TREND_FOLLOWING = auto()  # Strategies that follow trends
-    BREAKOUT = auto()     # Strategies trading breakouts
-    VOLATILITY = auto()   # Volatility-based strategies
+    BREAKOUT = auto()  # Strategies trading breakouts
+    VOLATILITY = auto()  # Volatility-based strategies
     MACHINE_LEARNING = auto()  # ML-based strategies
-    TECHNICAL = auto()    # Technical indicator strategies
+    TECHNICAL = auto()  # Technical indicator strategies
     FUNDAMENTAL = auto()  # Fundamental analysis strategies
-    ARBITRAGE = auto()    # Arbitrage strategies
+    ARBITRAGE = auto()  # Arbitrage strategies
     MARKET_NEUTRAL = auto()  # Market neutral strategies
     PAIRS_TRADING = auto()  # Pairs trading strategies
     HIGH_FREQUENCY = auto()  # High-frequency trading strategies
-    CUSTOM = auto()       # Custom strategies
+    CUSTOM = auto()  # Custom strategies
 
 
 class SignalType(Enum):
@@ -91,7 +91,7 @@ class SEBILimits:
 @dataclass
 class StrategyMetadata:
     """Metadata for strategy configuration and categorization"""
-    
+
     name: str
     strategy_type: StrategyType
     description: str
@@ -104,7 +104,7 @@ class StrategyMetadata:
     market_conditions: list[str] = None
     time_frames: list[str] = None
     instruments: list[str] = None
-    
+
     def __post_init__(self):
         """Initialize default values for optional fields"""
         if self.tags is None:

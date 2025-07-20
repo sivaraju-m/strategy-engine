@@ -11,7 +11,7 @@ features such as:
 - Multi-timeframe analysis for better trend confirmation
 - Improved signal generation logic with confidence scoring
 - Support for multiple indicators and trend confirmation
-- Unified signal generation interface for easy integration with trading systems 
+- Unified signal generation interface for easy integration with trading systems
 
 """
 

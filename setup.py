@@ -6,10 +6,12 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
+        "fastapi>=0.110.0",
+        "uvicorn>=0.30.0",
         "pandas>=1.5.0",
         "numpy>=1.22.0",
         "scikit-learn>=1.0.0",
-        "pandas-ta>=0.3.14b0",
+        # "pandas-ta>=0.3.14b0",  # Temporarily disabled due to TA-Lib build issues
         "matplotlib>=3.5.0",
         "pyyaml>=6.0",
         "google-cloud-bigquery>=3.0.0",

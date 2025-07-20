@@ -21,8 +21,8 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler("/app/logs/strategy_engine.log")
-    ]
+        logging.FileHandler("/app/logs/strategy_engine.log"),
+    ],
 )
 
 logger = logging.getLogger(__name__)
@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
 app = FastAPI(
     title="Strategy Engine",
     description="AI-powered strategy engine for algorithmic trading with backtesting and signal generation",
-    version="0.1.0"
+    version="0.1.0",
 )
 
 # Add CORS middleware
@@ -43,6 +43,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 async def root():
     """Root endpoint for health checks."""
@@ -53,9 +54,10 @@ async def root():
         "services": {
             "signal_generation": "ready",
             "backtesting": "ready",
-            "strategy_optimization": "ready"
-        }
+            "strategy_optimization": "ready",
+        },
     }
+
 
 @app.get("/health")
 async def health_check():
@@ -67,11 +69,12 @@ async def health_check():
             "signal_generator": "active",
             "backtest_engine": "ready",
             "ml_models": "loaded",
-            "data_pipeline": "connected"
+            "data_pipeline": "connected",
         },
         "environment": os.environ.get("ENVIRONMENT", "development"),
-        "uptime": "operational"
+        "uptime": "operational",
     }
+
 
 @app.get("/status")
 async def get_status():
@@ -83,19 +86,20 @@ async def get_status():
             "signal_generation": "enabled",
             "backtesting": "enabled",
             "ml_optimization": "enabled",
-            "real_time_analytics": "enabled"
+            "real_time_analytics": "enabled",
         },
         "integrations": {
             "bigquery": "connected",
             "cloud_storage": "connected",
-            "monitoring": "active"
+            "monitoring": "active",
         },
         "performance": {
             "avg_signal_generation_time": "0.2s",
             "backtest_success_rate": "99.8%",
-            "ml_model_accuracy": "94.2%"
-        }
+            "ml_model_accuracy": "94.2%",
+        },
     }
+
 
 @app.get("/strategies")
 async def list_strategies():
@@ -107,25 +111,26 @@ async def list_strategies():
                 "name": "momentum_strategy",
                 "description": "Momentum-based trading strategy",
                 "status": "active",
-                "performance": {"sharpe_ratio": 1.94, "returns": 51.48}
+                "performance": {"sharpe_ratio": 1.94, "returns": 51.48},
             },
             {
-                "name": "mean_reversion_strategy", 
+                "name": "mean_reversion_strategy",
                 "description": "Mean reversion trading strategy",
                 "status": "active",
-                "performance": {"sharpe_ratio": 1.67, "returns": 42.15}
+                "performance": {"sharpe_ratio": 1.67, "returns": 42.15},
             },
             {
                 "name": "ml_ensemble_strategy",
                 "description": "Machine learning ensemble strategy",
-                "status": "active", 
-                "performance": {"sharpe_ratio": 2.13, "returns": 63.24}
-            }
+                "status": "active",
+                "performance": {"sharpe_ratio": 2.13, "returns": 63.24},
+            },
         ]
         return {"strategies": strategies, "count": len(strategies)}
     except Exception as e:
         logger.error(f"Error listing strategies: {e}")
         raise HTTPException(status_code=500, detail="Failed to retrieve strategies")
+
 
 @app.post("/signals/generate")
 async def generate_signals():
@@ -137,12 +142,17 @@ async def generate_signals():
             "signals_generated": 45,
             "execution_time": "0.18s",
             "timestamp": "2025-07-20T00:00:00Z",
-            "strategies_executed": ["momentum_strategy", "mean_reversion_strategy", "ml_ensemble_strategy"]
+            "strategies_executed": [
+                "momentum_strategy",
+                "mean_reversion_strategy",
+                "ml_ensemble_strategy",
+            ],
         }
         return result
     except Exception as e:
         logger.error(f"Error generating signals: {e}")
         raise HTTPException(status_code=500, detail="Signal generation failed")
+
 
 @app.post("/backtest")
 async def run_backtest():
@@ -156,26 +166,28 @@ async def run_backtest():
                 "total_return": 51.48,
                 "sharpe_ratio": 1.94,
                 "max_drawdown": 0.75,
-                "win_rate": 67.3
+                "win_rate": 67.3,
             },
-            "execution_time": "2.4s"
+            "execution_time": "2.4s",
         }
         return result
     except Exception as e:
         logger.error(f"Error running backtest: {e}")
         raise HTTPException(status_code=500, detail="Backtest execution failed")
 
+
 class GracefulShutdown:
     """Handle graceful shutdown of the application."""
-    
+
     def __init__(self):
         self.shutdown = False
         signal.signal(signal.SIGINT, self._exit_gracefully)
         signal.signal(signal.SIGTERM, self._exit_gracefully)
-    
+
     def _exit_gracefully(self, signum, frame):
         logger.info(f"Received signal {signum}, initiating graceful shutdown...")
         self.shutdown = True
+
 
 async def startup_event():
     """Application startup event."""
@@ -184,40 +196,38 @@ async def startup_event():
     logger.info("Connecting to BigQuery and Cloud Storage...")
     logger.info("All systems initialized successfully")
 
+
 async def shutdown_event():
     """Application shutdown event."""
     logger.info("Strategy Engine shutting down...")
     logger.info("Saving state and closing connections...")
     logger.info("All services stopped gracefully")
 
+
 # Add event handlers
 app.add_event_handler("startup", startup_event)
 app.add_event_handler("shutdown", shutdown_event)
+
 
 def main():
     """Main function to run the application."""
     try:
         logger.info("Starting Strategy Engine...")
-        
+
         # Initialize graceful shutdown handler
         shutdown_handler = GracefulShutdown()
-        
+
         # Get port from environment variable (Cloud Run sets PORT)
         port = int(os.environ.get("PORT", 8080))
         logger.info(f"Starting server on port {port}")
-        
+
         # Run the server
-        uvicorn.run(
-            app,
-            host="0.0.0.0",
-            port=port,
-            log_level="info",
-            access_log=True
-        )
-        
+        uvicorn.run(app, host="0.0.0.0", port=port, log_level="info", access_log=True)
+
     except Exception as e:
         logger.error(f"Failed to start Strategy Engine: {e}")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
